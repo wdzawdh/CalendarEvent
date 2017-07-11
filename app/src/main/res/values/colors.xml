@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5CACEE</color>
+    <color name="colorPrimaryDark">#1E90FF</color>
+    <color name="colorAccent">#CD96CD</color>
+
+    <!-- text -->
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#666666</color> <!-- comn_gray -->
+    <color name="text_tertiary">#999999</color>
+    <color name="text_disable">#999999</color>
+    <color name="text_hint">#c1c1c1</color>
+</resources>
