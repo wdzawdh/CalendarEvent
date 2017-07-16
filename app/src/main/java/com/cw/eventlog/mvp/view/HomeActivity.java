@@ -85,12 +85,11 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
     private void initView() {
         setTitle(null);
         setSupportActionBar(tb_toolbar);
-        showPermissionDialog();
         mEventAdapter = new EventAdapter();
         rv_event_list.setLayoutManager(new LinearLayoutManager(this));
         rv_event_list.addItemDecoration(new EventAdapter.DiaryDecoration(20, 10));
         rv_event_list.setAdapter(mEventAdapter);
-        mPresenter.refresh();
+        showPermissionDialog();
     }
 
     private void initListener() {
@@ -152,7 +151,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
 
     private void showPermissionDialog() {
         PermissionUtil.with(this)
-                .add(Manifest.permission.READ_CALENDAR)
+                .add(Manifest.permission.WRITE_CALENDAR)
                 .request(new ResultCallBack() {
 
                     @Override
@@ -176,6 +175,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
 
                     @Override
                     public void onGrantedAll() {
+                        mPresenter.refresh();
                     }
 
                     @Override
